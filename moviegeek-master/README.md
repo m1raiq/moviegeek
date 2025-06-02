@@ -240,7 +240,7 @@ Running the server like this will make the website available [http://127.0.0.1:8
 WARNING: Other applications also use this port so you might need to try out 8001 instead.
 
 NB: If the website responds with an error about a ```.prs``` file missing, its because you skipped 
-the section about creating a themoviedb.org id. [link](#create-an-id-for-themoviedborg)
+the section about creating a themoviedb.org id. [link](#create-an-id-for-omdborg)
 
 ## Closing down
 When you are finished running the project you can close it down doing the following steps, or simply close the 

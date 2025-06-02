@@ -10,4 +10,4 @@ cluster.png
 */__pycache__/*
 **/__pycache__/*
 analytics/migrations/*
-
+data
