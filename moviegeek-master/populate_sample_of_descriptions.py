@@ -25,7 +25,7 @@ def get_imdb_movie(movie_id):
         return req_json
 
 
-def populate_descriptions():
+def populate_descriptions_omdb():
     # MovieDescriptions.objects.all().delete()
     all_movies = Movie.objects.all()
     for movie in tqdm(all_movies):
@@ -39,9 +39,23 @@ def populate_descriptions():
             md.genres = omdb_movie["Genre"]
             md.save()
 
+def populate_descriptions_csv():
+    import pandas as pd
+    df = pd.read_csv('IMDb_movies.csv')[['imdb_title_id', 'title', 'description', 'genre']]
+    print(df.columns)
+    for _, row in tqdm(df.iterrows()):
+        _id = row['imdb_title_id']
+        md = MovieDescriptions.objects.get_or_create(movie_id=_id)[0]
+        md.imdb_id = _id
+        md.title = row['title']
+        md.description = row['description']
+        md.genres = row['genre']
+        md.save()
+
 
 if __name__ == "__main__":
     print("Starting MovieGeeks Population script...")
-    populate_descriptions()
+    populate_descriptions_csv()
+    # populate_descriptions_omdb()
     # m = get_imdb_movie('1234')
     # print(m)
