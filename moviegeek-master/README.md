@@ -31,6 +31,7 @@ You have two choices for downloading the source code – downloading a zip file 
    `> git clone https://github.com/labintsev/moviegeek
    `
 
+!!! Note, you don`t need to do fork, publish your own repository.
  
 ###  Create an ID for omdb.org
 
@@ -77,7 +78,7 @@ docker-compose up web
 ```
 
 NB: If the website responds with an error about a ```.prs``` file missing, its because you skipped 
-the section about creating a themoviedb.org id. [link](#create-an-id-for-the-omdborg)
+the section about creating a omdb.org id. [link](#create-an-id-for-the-omdborg)
  
 (to close it again by stopping the process (Cltr+C))
 
@@ -123,7 +124,7 @@ commands (Anaconda users, please use the Anaconda-specific commands):
 *   *Anaconda users*:
     ```bash
     > cd live-project
-    > conda create -n prs python=3.6
+    > conda create -n prs python=3.11
     > conda activate prs
     ```
     Note that 3.6 should be replaced with 3.x, with x representing the version you are using. 
@@ -136,7 +137,7 @@ There are Anaconda specific instructions for this step, too; be sure to use thos
 
     Use pip to install the required files:
     ```bash
-    > pip3 install -r requirements.txt
+    > pip install -r requirements.txt
     ```
 *   *Anaconda users*
 
@@ -170,7 +171,7 @@ Use PostGreSQL’s admin tool pgadmin to create a database. Name it `moviegeek`.
 #### Install the Python database driver 
 
 Once the PostGreSQL database is spinning, it’s time for the Python driver, which enables Django to talk with the 
-database. I recommend using [Psycopg](https://www.psycopg.org/). Download it [here](https://pypi.org/project/psycopg2/). 
+database. I recommend using [Psycopg2](https://www.psycopg.org/). Download it [here](https://pypi.org/project/psycopg2/).  
 Install it following these [instructions](https://www.psycopg.org/docs/install.html). 
 
 ####  Configure the Django database connection to connect to PostGreSql
