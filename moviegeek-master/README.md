@@ -1,14 +1,14 @@
 # The MovieGEEK Installation Guide
 
-The MovieGEEK is a website initially implemented to accompany my book, Practical Recommender Systems. 
-However, this folder is used for the manning LiveProject, which is currently in MEAP. 
+The MovieGEEK is a website initially implemented to accompany Kim Falk book, Practical Recommender Systems. Add commentMore actions
+However, many libraries are deprecated, so this fork is in active development.  
  
 The website is not intended as a standalone tutorial or a plug-and-play website for you to install and 
 use for your content. 
 
 ## Thanks!
 This site would not be working if it wasn’t for the [MovieTweetings](https://github.com/sidooms/MovieTweetings) 
-dataset and the poster images provided by the [themoviedb.org](https://www.themoviedb.org) API. 
+dataset and the api provided by the [The Open Movie Database](https://www.omdbapi.com/) API.
 I wish to extend a big thanks to both of them for all their work.
 
 ## Project Setup
@@ -21,30 +21,30 @@ You have two choices for downloading the source code – downloading a zip file 
 
 * *Downloading a zip file*
  
-   From the main [MovieGEEK directory on GitHub](https://github.com/practical-recommender-systems/moviegeek), 
+   From the main [MovieGEEK directory on GitHub] (https://github.com/labintsev/moviegeek),
    click the green “Clone or download” button and choose to download a zip file to your computer.
    
 * *Using Git*
 
    Clone this repository or create a fork in your GitHub, and then clone that instead. The following command 
    will create a copy on your computer.
-   `> git clone https://github.com/kimfalk/live-project.git`
+   `> git clone https://github.com/labintsev/moviegeek
+   `
 
  
-###  Create an ID for themoviedb.org
+###  Create an ID for omdb.org
 
-You have to create an ID with themoviedb.org to use its pictures.
+You have to create an ID with omdb.org to use its pictures.
 
-* Go to [https://www.themoviedb.org/account/signup](https://www.themoviedb.org/account/signup) 
+* Go to https://www.omdbapi.com/
 * Sign up
-* Login, go to your account settings and [create an API](https://www.themoviedb.org/settings/api). You can access 
+* Login, go to your account settings and [create an API](https://www.omdbapi.com/apikey.aspx). You can access 
 settings by clicking the avatar in the upper right-hand corner (the default is a blue circle with a white logo in it). 
 Then you’ll see settings on the left. 
 * Create a file in the moviegeek directory called ".prs" 
 * Open .prs and add { "themoviedb_apikey": <INSERT YOUR APIKEY HERE>}
 Remember to remove the "<" and ">" When you are finished, the file contents should look something like 
-{"themoviedb_apikey": "6d88c9a24b1bc9a60b374d3fe2cd92ac"}
-* IP of themooviedb.org is `99.86.4.122`
+{"omdb_apikey": "6d88c9a24b1bc9a60b374d3fe2cd92ac"}
 
 
 ## Running the site 
@@ -77,7 +77,7 @@ docker-compose up web
 ```
 
 NB: If the website responds with an error about a ```.prs``` file missing, its because you skipped 
-the section about creating a themoviedb.org id. [link](#create-an-id-for-themoviedborg)
+the section about creating a themoviedb.org id. [link](#create-an-id-for-the-omdborg)
  
 (to close it again by stopping the process (Cltr+C))
 
@@ -200,7 +200,7 @@ Update the USER, PASSWORD, HOST, and PORT fields:
 * HOST (db_host): localhost (if you have have installed it on your private machine)
 * PORT (db_port_number): 5432 (the default port)
 
-For more information please refer to the Django documentation [link](https://docs.djangoproject.com/en/2.2/ref/databases/)
+For more information please refer to the Django documentation [link](https://docs.djangoproject.com/en/5.0/ref/databases/)
 
 ### Create and populate the MovieGEEKS databases
 Everyone must follow these steps, whether or not you are using PostGreSQL.
